@@ -12,6 +12,14 @@ Requires `pdflatex` and `bibtex`
 pdfbibtex file.tex
 ```
 
+##Install
+
+There's no debian package yet. But you can run this simple command to have it available from anywhere:
+
+```
+sudo cp pdfbibtex.sh /bin/pdfbibtex
+```
+
 ##Advanced usage
 
 If you want to have your latex file automatically generate the pdf when edited, so you 
@@ -21,5 +29,7 @@ can view in real time in your pdf viewer:
 sudo apt-get install npm
 sudo npm-install -g nodemon
 
-nodemon -x "path-to-pdfbibtex" ./file-watched.tex
+nodemon -x pdfbibtex ./file-watched.tex
 ```
+
+If you didn't install but just cloned the repository, replace `pdfbibtex` by `path-to-pdfbibtex.sh`.
