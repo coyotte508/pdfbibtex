@@ -2,7 +2,10 @@
 
 filename="${1##*/}"
 filename="${filename%.*}"
-pdflatex $1
-bibtex $filename
-pdflatex $1
-pdflatex $1
+DIR=$(dirname "$1")
+
+pdflatex --output-directory /tmp/ $1
+bibtex /tmp/$filename
+pdflatex --output-directory /tmp/ $1
+pdflatex --output-directory /tmp/ $1
+cp /tmp/$filename.pdf $DIR
