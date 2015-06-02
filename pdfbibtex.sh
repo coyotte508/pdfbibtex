@@ -8,7 +8,7 @@ mkdir /tmp/pdfbibtex/
 pdflatex --output-directory /tmp/pdfbibtex/ $1
 cp *.bib /tmp/pdfbibtex/
 cd /tmp/pdfbibtex/
-bibtex $filename
+echo -e "\n\n\n" | bibtex $filename
 cd -
 pdflatex --output-directory /tmp/pdfbibtex/ $1
 pdflatex --output-directory /tmp/pdfbibtex/ $1
